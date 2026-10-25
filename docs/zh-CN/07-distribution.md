@@ -4,12 +4,12 @@
 
 ## 发布后安全下载
 
-使用实际 GitHub owner 和经过审阅的完整 commit SHA。公开只读单文件可直接下载后运行；生产变更脚本必须显式提供路径、版本和维护参数。不提供 `curl ... | sudo bash` 自动升级。
+以下命令已固定实际 owner 和脚本完整 commit SHA。公开只读单文件可直接下载后运行；生产变更脚本必须显式提供路径、版本和维护参数。不提供 `curl ... | sudo bash` 自动升级。
 
 ```bash
-# Replace both placeholders after publishing; use an immutable reviewed commit.
+# Fixed reviewed script revision.
 REPO_OWNER='minglezhou'
-REF='FULL_40_HEX_COMMIT_SHA'
+REF='91db04269ad1bbe3bb041ea57fc6ce86d2b94fa4'
 tmp=$(mktemp -d)
 curl --fail --show-error --silent --location --proto '=https' --proto-redir '=https'   "https://raw.githubusercontent.com/$REPO_OWNER/FNOS-OpenclawMod/$REF/scripts/inspect.py"   -o "$tmp/inspect.py"
 python3 -B "$tmp/inspect.py"

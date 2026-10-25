@@ -2,11 +2,11 @@
 
 Repository: [minglezhou/FNOS-OpenclawMod](https://github.com/minglezhou/FNOS-OpenclawMod). The owner selected this existing repository name.
 
-After publication, use the actual GitHub owner and an immutable reviewed commit. Download the self-contained read-only inspector and run it locally:
+The download below uses the published owner and an immutable script commit. Download the self-contained read-only inspector and run it locally:
 
 ```bash
 REPO_OWNER='minglezhou'
-REF='FULL_40_HEX_COMMIT_SHA'
+REF='91db04269ad1bbe3bb041ea57fc6ce86d2b94fa4'
 tmp=$(mktemp -d)
 curl --fail --show-error --silent --location --proto '=https' --proto-redir '=https'   "https://raw.githubusercontent.com/$REPO_OWNER/FNOS-OpenclawMod/$REF/scripts/inspect.py"   -o "$tmp/inspect.py"
 python3 -B "$tmp/inspect.py"

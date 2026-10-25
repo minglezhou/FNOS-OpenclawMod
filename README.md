@@ -43,6 +43,19 @@ sudo python3 -B scripts/inspect.py
 
 The default derives paths through fnOS application links; override `--data-root` when needed. Inspect the result before making changes.
 
+## curl 下载只读检查 / Download the read-only inspector
+
+```bash
+tmp=$(mktemp -d)
+curl --fail --show-error --silent --location --proto '=https' --proto-redir '=https' \
+  https://raw.githubusercontent.com/minglezhou/FNOS-OpenclawMod/91db04269ad1bbe3bb041ea57fc6ce86d2b94fa4/scripts/inspect.py \
+  -o "$tmp/inspect.py"
+python3 -B "$tmp/inspect.py"
+```
+
+此命令仅盘点，不升级、不重启、不读取凭据。其他维护命令见 [COMMANDS.md](docs/COMMANDS.md)。
+This command inventories the host; it does not upgrade, restart services or read credentials.
+
 ## 脚本 / Scripts
 
 | 脚本 | 行为 / Behavior |
