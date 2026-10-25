@@ -1,0 +1,21 @@
+# Never commit a live installation, personal instructions, receipts, or secrets.
+.env
+.env.*
+!.env.example
+openclaw.json
+*.sqlite*
+*.db
+*.log
+*.tgz
+*.tar
+*.tar.gz
+*.tar.xz
+*.zip
+__pycache__/
+*.pyc
+node_modules/
+backups/
+receipts/
+downloads/
+private/
+.DS_Store
